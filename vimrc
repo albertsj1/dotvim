@@ -24,7 +24,11 @@ set autoindent
 " Use spaces instead of tabs
 set expandtab
 colorscheme manxome 
-set guifont=Inconsolata:h12
+if has("gui_gtk2")
+  set guifont=Bitstream\ Vera\ Sans\ Mono\ 14
+else
+  set guifont=Inconsolata:h12
+endif
 set ignorecase
 set vb " turns off visual bell
 set smartindent
@@ -44,21 +48,27 @@ compiler ruby
 autocmd FileType make     set noexpandtab
 autocmd FileType python   set noexpandtab
 
-let g:fuzzy_ignore = "*.log"
+let g:fuzzy_ignore = "*.log" 
 let g:fuzzy_matching_limit = 70
 let g:fuzzy_ceiling = 50000
 let mapleader=","
 
+let Tlist_GainFocus_On_ToggleOpen=1
+let Tlist_Process_File_Always=1
+let Tlist_Show_Menu=1
+let Tlist_Enable_Fold_Column=0
+let g:gist_detect_filetype = 1
+
 set grepprg=ack
 set grepformat=%f:%l:%m
 
-map <leader>l :TlistToggle<CR>
 map <leader>t :FuzzyFinderTextMate<CR>
 map <leader>b :FuzzyFinderBuffer<CR>
 map <leader>d :execute 'NERDTreeToggle ' . getcwd()<CR>
 map <leader>r :RunSpec<CR>
 map <leader>R :RunSpecs<CR>
 map <leader>f :Ack 
+map <leader>l :TlistToggle<CR>
 
 
 " allow backspacing over everything in insert mode
