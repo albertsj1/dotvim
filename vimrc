@@ -75,6 +75,7 @@ map <leader>l :TlistToggle<CR>
 set backspace=indent,eol,start
 
 set backupdir=~/.vimswaps,/tmp
+set backupskip=/tmp/*,/private/tmp/*"
 
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
