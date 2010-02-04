@@ -23,7 +23,7 @@ set tabstop=2
 set autoindent
 " Use spaces instead of tabs
 set expandtab
-colorscheme manxome 
+colorscheme darkburn
 if has("gui_gtk2")
   set guifont=Bitstream\ Vera\ Sans\ Mono\ 14
 else
